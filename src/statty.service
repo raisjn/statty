@@ -1,0 +1,10 @@
+[Unit]
+Description=rM process stat collection
+After=xochitl.service opt.mount
+
+[Service]
+ExecStart=/opt/bin/statty
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
