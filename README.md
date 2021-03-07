@@ -23,5 +23,5 @@ if it works, turn on the system collector service:
 ## looking at data
 
 * from base dir, run `bash ./scripts/get_data.sh` to retrieve data from rM
-* to visualize, run `python ./scripts/plot_bokeh.py`
+* to visualize, run `python ./scripts/bokeh_plot.py`
 

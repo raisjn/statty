@@ -3,12 +3,15 @@ from bokeh.plotting import ColumnDataSource, figure, output_file, show
 from bokeh.palettes import d3
 
 import json
+import time
 from datetime import datetime
 
 def to_ts(arr):
     return [ datetime.fromtimestamp(int(x)) for x in arr ]
 
-xmin = datetime.fromtimestamp(1614128763 - 3600 * 6)
+# plot the last week of data
+# TODO: make configurable
+xmin = datetime.fromtimestamp(time.time() - 3600 * 24 * 7)
 xmax = datetime.now()
 
 TOOLTIPS = [
@@ -85,4 +88,3 @@ plot_battery(p1)
 plot_cpu(p2)
 
 show(gridplot([[p1],[p2]], plot_width=1200, plot_height=400))  # open a browser
-
